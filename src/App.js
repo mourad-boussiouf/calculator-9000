@@ -1,20 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
+import BeautifulScreen from './components/BeautifulScreen.js';
+import Calculator from './components/Calculator.js';
+import TheTitle from './components/TheTitle.js';
 
-const TheTitle = (props) => {
-    return (
-        <div className="TheTitle">
-            <h1>Calculator 9000</h1>
-        </div>
-    )
-};
 
 function App() {
   return (
     <div className="App">
-<h1>Calculator 9000</h1>
+        <TheTitle />
+        <Calculator />
     </div>
   );
 }
 
 export default App;
+
+
+
+
