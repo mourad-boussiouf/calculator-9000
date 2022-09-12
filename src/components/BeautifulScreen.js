@@ -1,10 +1,12 @@
-import App from "../App";
+
 
 const BeautifulScreen = (props) => {
+    const resultats = '20';
     return(
         <div>
             <ul>
-                <li>TOTO</li>
+                <li>Resultat :</li>
+                <li>{resultats}</li>
             </ul>
         </div>
     )
