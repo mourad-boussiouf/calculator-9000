@@ -1,13 +1,10 @@
 
 
-const BeautifulScreen = (props) => {
+const BeautifulScreen = () => {
     const resultats = '20';
     return(
-        <div>
-            <ul>
-                <li>Resultat :</li>
-                <li>{resultats}</li>
-            </ul>
+        <div ClassName="Ecran">
+                {resultats}
         </div>
     )
 }

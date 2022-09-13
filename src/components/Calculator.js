@@ -1,12 +1,12 @@
 import BeautifulScreen from './BeautifulScreen.js';
+import MagnificientEqualButton from './MagnificientEqualButton.js';
 
-const Calculator = (props) => {
+const Calculator = ({ children }) => {
     return (
         <div className="Calculator">
-            <BeautifulScreen resultats = "20" />
+            { children }
         </div>
     )
 };
-
 
 export default Calculator;
