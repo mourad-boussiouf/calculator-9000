@@ -1,10 +1,11 @@
+import React from 'react';
 
+function BeautifulScreen ({nombre1, nombre2}) {
 
-const BeautifulScreen = () => {
-    const resultats = '20';
     return(
         <div ClassName="Ecran">
-                {resultats}
+             { nombre1 }+
+             42
         </div>
     )
 }
