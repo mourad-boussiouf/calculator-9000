@@ -8,6 +8,7 @@ const GreatOperationButton  = (props) => {
 
     const clickReset = () => {
         props.setTheOperator()
+        props.resetExpression()
     }
 
     return (

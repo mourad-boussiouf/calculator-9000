@@ -11,6 +11,9 @@ const Calculator = () => {
     const [nombre2, setNombre2] = useState([])
     const [operator, setOperator] = useState()
     const [current, setCurrent] = useState(false)
+    const [reset, setReset] = useState(false)
+
+
 
     const setFirstNumber = (Nombre) => {
         if(current === false){
@@ -29,7 +32,15 @@ const Calculator = () => {
         setOperator(operator);
     }
 
-    console.log(operator);
+    const resetExpression = () => {
+        setReset(true)
+        setNombre1([]);
+        setNombre2([]);
+        setCurrent(false)
+    }
+
+
+    console.log(reset)
 
         return (
         <main>
@@ -38,6 +49,7 @@ const Calculator = () => {
                 <BeautifulScreen nombre1={nombre1} operator={operator} nombre2={nombre2}  />
                 <GreatOperationButton
                     setTheOperator = {setTheOperator}
+                    resetExpression = {resetExpression}
                 />
                 <AmazingNumberButton
                     setFirstNumber = {setFirstNumber}
