@@ -36,11 +36,53 @@ const Calculator = () => {
         setReset(true)
         setNombre1([]);
         setNombre2([]);
+        setOperator();
         setCurrent(false)
     }
 
+    const calculTheResult = () => {
 
-    console.log(reset)
+        let StringNombre1 = '';
+        let StringNombre2 = '';
+
+        if (nombre1.length === 0 || nombre1.length === 0){
+            alert('ya pas de zero pour pas pouvoir faire la tete a toto lol')
+        }
+        for (let i = 0 ; i < nombre1.length ; i++ ){
+                StringNombre1 += String(nombre1[i]);
+        }
+
+        for (let i = 0 ; i < nombre2.length ; i++ ){
+            StringNombre2 += String(nombre2[i]);
+        }
+
+        switch (operator) {
+            case '+' :
+                console.log(parseInt(StringNombre1) + parseInt(StringNombre2));
+                break;
+            case '/' :
+                console.log(parseInt(StringNombre1) + parseInt(StringNombre2));
+                break;
+            case '-' :
+                console.log(parseInt(StringNombre1) + parseInt(StringNombre2));
+                break;
+            case '*' :
+                console.log(parseInt(StringNombre1) + parseInt(StringNombre2));
+                break;
+        }
+
+    }
+    let assembledExpression = nombre1.length
+
+    const setTheResult = () => {
+
+        console.log(nombre2)
+        console.log(operator)
+        calculTheResult()
+    }
+
+
+
 
         return (
         <main>
@@ -55,7 +97,9 @@ const Calculator = () => {
                     setFirstNumber = {setFirstNumber}
                     setSecondNumber = {setSecondNumber}
                 />
-                <MagnificientEqualButton />
+                <MagnificientEqualButton
+                    setTheResult = {setTheResult}
+                />
             </div>
         </main>
     )
