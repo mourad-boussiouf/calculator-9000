@@ -1,11 +1,10 @@
 import React from 'react';
 
-function BeautifulScreen ({nombre1, nombre2}) {
+function BeautifulScreen ({nombre1,operator,nombre2}) {
 
     return(
-        <div ClassName="Ecran">
-             { nombre1 }+
-             42
+        <div className="Ecran">
+             { nombre1 } { operator } { nombre2 }
         </div>
     )
 }

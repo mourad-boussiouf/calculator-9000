@@ -1,10 +1,17 @@
-const GreatOperationButton = ({ children }) => {
+import React from 'react'
+
+const GreatOperationButton  = (props) => {
+
+    const clickOperator = (e) => {
+        props.setTheOperator(e.target.value)
+    }
+
     return (
-        <div className="Operateurs">
-            <button>/</button>
-            <button>*</button>
-            <button>+</button>
-            <button>-</button>
+        <div>
+            <button value = '/'  onClick= {clickOperator}>/</button>
+            <button value = '*'  onClick= {clickOperator}>*</button>
+            <button value = '+'  onClick= {clickOperator}>+</button>
+            <button value = '-'  onClick= {clickOperator}>-</button>
 
             <button>SUPPR</button>
         </div>
