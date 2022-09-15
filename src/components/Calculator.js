@@ -12,11 +12,9 @@ const Calculator = () => {
     const [operator, setOperator] = useState()
     const [current, setCurrent] = useState(false)
 
-
     const setFirstNumber = (Nombre) => {
         if(current === false){
             setNombre1([...nombre1,Nombre] );
-
         }
     }
 
@@ -25,8 +23,6 @@ const Calculator = () => {
             setNombre2([...nombre2,Nombre] );
         }
     }
-
-
 
     const setTheOperator = (operator) => {
         setCurrent(true)
@@ -38,17 +34,17 @@ const Calculator = () => {
         return (
         <main>
             <TheTitle />
-        <div className="Calculator">
-            <BeautifulScreen nombre1={nombre1} operator={operator} nombre2={nombre2}  />
-            <GreatOperationButton
-                setTheOperator = {setTheOperator}
-            />
-            <AmazingNumberButton
-                setFirstNumber = {setFirstNumber}
-                setSecondNumber = {setSecondNumber}
-            />
-            <MagnificientEqualButton />
-        </div>
+            <div className="Calculator">
+                <BeautifulScreen nombre1={nombre1} operator={operator} nombre2={nombre2}  />
+                <GreatOperationButton
+                    setTheOperator = {setTheOperator}
+                />
+                <AmazingNumberButton
+                    setFirstNumber = {setFirstNumber}
+                    setSecondNumber = {setSecondNumber}
+                />
+                <MagnificientEqualButton />
+            </div>
         </main>
     )
 };

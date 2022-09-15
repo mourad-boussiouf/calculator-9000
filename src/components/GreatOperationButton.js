@@ -6,14 +6,18 @@ const GreatOperationButton  = (props) => {
         props.setTheOperator(e.target.value)
     }
 
+    const clickReset = () => {
+        props.setTheOperator()
+    }
+
     return (
         <div>
-            <button value = '/'  onClick= {clickOperator}>/</button>
-            <button value = '*'  onClick= {clickOperator}>*</button>
+            <button value = '/'  onClick= {clickOperator}>÷</button>
+            <button value = '*'  onClick= {clickOperator}>x</button>
             <button value = '+'  onClick= {clickOperator}>+</button>
             <button value = '-'  onClick= {clickOperator}>-</button>
 
-            <button>SUPPR</button>
+            <button onClick={clickReset}>SUPPR</button>
         </div>
     )
 };
