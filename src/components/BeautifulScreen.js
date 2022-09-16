@@ -4,7 +4,7 @@ function BeautifulScreen ({nombre1,operator,nombre2}) {
 
     return(
         <div className="ecran">
-            { nombre1 } { operator } { nombre2 } <br/>
+            { nombre1 } { operator } { nombre2 }
 
         </div>
     )

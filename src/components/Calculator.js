@@ -29,7 +29,10 @@ const Calculator = () => {
 
     const setTheOperator = (operator) => {
         setCurrent(true)
-        setOperator(operator);
+        if (nombre1.length>0){
+            setOperator(operator)
+        }
+        else {alert('vous devez ecrire une expression correcte')}
     }
 
     const resetExpression = () => {
@@ -46,7 +49,7 @@ const Calculator = () => {
         let StringNombre2 = '';
 
         if (nombre1.length === 0 || nombre1.length === 0){
-            alert('ya pas de zero pour pas pouvoir faire la tete a toto lol')
+            alert('vous devez ecrire une expression correcte')
         }
         for (let i = 0 ; i < nombre1.length ; i++ ){
                 StringNombre1 += String(nombre1[i]);
@@ -55,35 +58,47 @@ const Calculator = () => {
         for (let i = 0 ; i < nombre2.length ; i++ ){
             StringNombre2 += String(nombre2[i]);
         }
-
+        let calculatedResult;
         switch (operator) {
             case '+' :
-                console.log(parseInt(StringNombre1) + parseInt(StringNombre2));
+                calculatedResult = parseInt(StringNombre1) + parseInt(StringNombre2);
+                return(calculatedResult);
                 break;
             case '/' :
-                console.log(parseInt(StringNombre1) + parseInt(StringNombre2));
+                calculatedResult = parseInt(StringNombre1) / parseInt(StringNombre2);
+                return(calculatedResult);
                 break;
             case '-' :
-                console.log(parseInt(StringNombre1) + parseInt(StringNombre2));
+                calculatedResult = parseInt(StringNombre1) - parseInt(StringNombre2);
+                return(calculatedResult);
                 break;
             case '*' :
-                console.log(parseInt(StringNombre1) + parseInt(StringNombre2));
+                calculatedResult = parseInt(StringNombre1) * parseInt(StringNombre2);
+                return calculatedResult ;
                 break;
         }
-
     }
-    let assembledExpression = nombre1.length
+
 
     const setTheResult = () => {
 
-        console.log(nombre2)
-        console.log(operator)
-        calculTheResult()
+        let finalResult = calculTheResult()
+        let arrailleFinalResult = String(finalResult).split("").map((finalResult)=>{
+            return (finalResult)
+        })
+        resetExpression()
+        if (finalResult !== undefined) {
+        setNombre1(arrailleFinalResult)
+            setCurrent(true)
+            setOperator(operator)
+
+        }
+        if (finalResult === undefined || isNaN(finalResult) === true){
+            resetExpression()
+            setCurrent(false)
+        }
+
     }
-
-
-
-
         return (
         <main>
             <TheTitle />
