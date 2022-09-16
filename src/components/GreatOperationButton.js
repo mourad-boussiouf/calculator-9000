@@ -12,14 +12,15 @@ const GreatOperationButton  = (props) => {
     }
 
     return (
-        <div>
+        <div className="operateurs">
             <button value = '/'  onClick= {clickOperator}>÷</button>
             <button value = '*'  onClick= {clickOperator}>x</button>
             <button value = '+'  onClick= {clickOperator}>+</button>
             <button value = '-'  onClick= {clickOperator}>-</button>
 
-            <button onClick={clickReset}>SUPPR</button>
+            <button id= "supprbutton" onClick={clickReset}>SUPPR</button>
         </div>
+
     )
 };
 

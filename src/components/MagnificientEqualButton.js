@@ -8,7 +8,7 @@ const MagnificientEgualButton = (props) => {
 
 
     return(
-        <div>
+        <div className="buttonEgale">
             <button onClick= {clickEqual}>
             <h2>=</h2>
             </button>

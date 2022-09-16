@@ -13,8 +13,6 @@ const Calculator = () => {
     const [current, setCurrent] = useState(false)
     const [reset, setReset] = useState(false)
 
-
-
     const setFirstNumber = (Nombre) => {
         if(current === false){
             setNombre1([...nombre1,Nombre] );
@@ -28,11 +26,14 @@ const Calculator = () => {
     }
 
     const setTheOperator = (operator) => {
-        setCurrent(true)
-        if (nombre1.length>0){
+        console.log(nombre1)
+        if (nombre1.length > 0 || nombre1[0] === "0"){
             setOperator(operator)
+            setCurrent(true)
         }
-        else {alert('vous devez ecrire une expression correcte')}
+        if (!nombre1 || nombre1.length < 1) {
+            setCurrent(false)
+            alert('Loperateur ne peut etre utilisé que entre deux entiers positifs.')}
     }
 
     const resetExpression = () => {
@@ -48,9 +49,6 @@ const Calculator = () => {
         let StringNombre1 = '';
         let StringNombre2 = '';
 
-        if (nombre1.length === 0 || nombre1.length === 0){
-            alert('vous devez ecrire une expression correcte')
-        }
         for (let i = 0 ; i < nombre1.length ; i++ ){
                 StringNombre1 += String(nombre1[i]);
         }
