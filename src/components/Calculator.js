@@ -4,11 +4,13 @@ import GreatOperationButton from "./GreatOperationButton";
 import AmazingNumberButton from "./AmazingNumberButton";
 import React, {useState} from "react";
 import TheTitle from "./TheTitle";
+import ItSOverNineThousand from "./ItSOverNineThousand";
 
 const Calculator = () => {
 
     const [nombre1, setNombre1] = useState([])
     const [nombre2, setNombre2] = useState([])
+    const [messageOver9000, setMessageOver9000] = useState()
     const [operator, setOperator] = useState()
     const [current, setCurrent] = useState(false)
     const [reset, setReset] = useState(false)
@@ -35,6 +37,7 @@ const Calculator = () => {
             setCurrent(false)
             alert('Loperateur ne peut etre utilisé que entre deux entiers positifs.')}
     }
+
 
     const resetExpression = () => {
         setReset(true)
@@ -96,11 +99,21 @@ const Calculator = () => {
             setCurrent(false)
         }
 
+        if (finalResult < 9000){
+            setMessageOver9000('')
+        }
+
+        if (finalResult > 9000){
+            setMessageOver9000('Its over 9000 !!!')
+        }
+
     }
+
         return (
         <main>
             <TheTitle />
             <div className="Calculator">
+                <ItSOverNineThousand messageOver9000={messageOver9000} />
                 <BeautifulScreen nombre1={nombre1} operator={operator} nombre2={nombre2}  />
                 <GreatOperationButton
                     setTheOperator = {setTheOperator}
