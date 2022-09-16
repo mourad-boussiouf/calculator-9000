@@ -28,7 +28,7 @@ const Calculator = () => {
     }
 
     const setTheOperator = (operator) => {
-        console.log(nombre1)
+
         if (nombre1.length > 0 || nombre1[0] === "0"){
             setOperator(operator)
             setCurrent(true)
@@ -45,6 +45,7 @@ const Calculator = () => {
         setNombre2([]);
         setOperator();
         setCurrent(false)
+        setMessageOver9000('')
     }
 
     const calculTheResult = () => {
@@ -99,14 +100,12 @@ const Calculator = () => {
             setCurrent(false)
         }
 
-        if (finalResult < 9000){
+        if (finalResult < 9000 || nombre1 < 9000){
             setMessageOver9000('')
         }
-
-        if (finalResult > 9000){
+        if (finalResult > 9000 ){
             setMessageOver9000('Its over 9000 !!!')
         }
-
     }
 
         return (
