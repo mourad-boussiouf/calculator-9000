@@ -104,7 +104,7 @@ const Calculator = () => {
             setMessageOver9000('')
         }
         if (finalResult > 9000 ){
-            setMessageOver9000('Its over 9000 !!!')
+            setMessageOver9000('I\'ts over 9000 !!!')
         }
     }
 
