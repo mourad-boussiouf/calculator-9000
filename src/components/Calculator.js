@@ -35,7 +35,7 @@ const Calculator = () => {
         }
         if (!nombre1 || nombre1.length < 1) {
             setCurrent(false)
-            alert('Loperateur ne peut etre utilisé que entre deux entiers positifs.')}
+            alert('L\'opérateur ne peut etre utilisé que entre deux entiers positifs.')}
     }
 
 
